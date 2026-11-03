@@ -1,0 +1,149 @@
+{
+  "release_id": "T03-08",
+  "release_version": "1.1.0",
+  "date": "2026-11-03",
+  "static_test_result": "PASS",
+  "real_project_end_to_end_test": "NOT_EXECUTED",
+  "tests": [
+    {
+      "test_id": "TC01",
+      "name": "六套模板包ZIP完整性",
+      "result": "PASS_STATIC",
+      "evidence": "V1.1六份工作簿ZIP容器可完整读取；原始V1.0单独保存",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC02",
+      "name": "六套工作簿结构盘点",
+      "result": "PASS_STATIC",
+      "evidence": "六份工作簿均包含新增V11页签；保留原业务页",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC03",
+      "name": "99项步骤机器映射",
+      "result": "PASS_STATIC",
+      "evidence": "99步唯一性与P6-09 Panel落点",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC04",
+      "name": "10个主Gate与G7子Gate",
+      "result": "PASS_STATIC",
+      "evidence": "G0-G9十主Gate（G7分为G7a/G7b）",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC05",
+      "name": "统一Gate字段",
+      "result": "PASS_STATIC",
+      "evidence": "六模块Gate权威登记具备S07的13项必需字段和唯一记录ID",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC06",
+      "name": "Gate决策枚举",
+      "result": "PASS_STATIC",
+      "evidence": "权威Gate决策与approval_mode分离；旧表作为审核明细",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC07",
+      "name": "交付变体ID唯一性",
+      "result": "PASS_STATIC",
+      "evidence": "variant_id歧义残留：[]",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC08",
+      "name": "attempt_id与take_id分离",
+      "result": "PASS_STATIC",
+      "evidence": "Attempt与Take稳定ID分离，Take保留媒体Hash",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC09",
+      "name": "G8逐变体精确审批",
+      "result": "PASS_STATIC",
+      "evidence": "G8准入精确匹配实际文件变体、hash、地区、渠道及授权",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC10",
+      "name": "G8/交付/签收/验收状态分离",
+      "result": "PASS_STATIC",
+      "evidence": "交付事务唯一权威，其他为准备/快照/作品集状态",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC11",
+      "name": "P11可选分支",
+      "result": "PASS_STATIC",
+      "evidence": "P11激活与无数据、G9状态分离",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC12",
+      "name": "P11 source_report_id追踪",
+      "result": "PASS_STATIC",
+      "evidence": "原始投放报告唯一ID可绑定导出文件与Hash",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC13",
+      "name": "唯一成本总账",
+      "result": "PASS_STATIC",
+      "evidence": "预算/承诺与实际交易主键分离，返工标为ACTUAL子集",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC14",
+      "name": "M02变更唯一来源",
+      "result": "PASS_STATIC",
+      "evidence": "M02统一以T03-01 09为变更决策主记录；其他模块本地影响/日志只引用",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC15",
+      "name": "M08权利许可追踪",
+      "result": "PASS_STATIC",
+      "evidence": "M08权利主索引可对权利范围/期限/文件证据逐项验证",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC16",
+      "name": "公共元数据与步骤实例",
+      "result": "PASS_STATIC",
+      "evidence": "步骤执行实例与成果注册均建立统一主键",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC17",
+      "name": "P6-09分镜Panel交付",
+      "result": "PASS_STATIC",
+      "evidence": "P6-09 Panel有身份、版本、文件证据、审核字段",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC18",
+      "name": "状态实体分离",
+      "result": "PASS_STATIC",
+      "evidence": "新根状态与S07一致；旧版字段以兼容别名迁移而非删除数据",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC19",
+      "name": "M01-M10管理系统覆盖",
+      "result": "PASS_STATIC",
+      "evidence": "M01-M10均具结构落点或权威登记，M10有待批准改进候选",
+      "real_project_execution": "NOT_TESTED"
+    },
+    {
+      "test_id": "TC20",
+      "name": "JSON字段字典一致性",
+      "result": "PASS_STATIC",
+      "evidence": "六套JSON字段与Excel页签及表格Header元数据一致；不匹配={'T03-01': [], 'T03-02': [], 'T03-03': [], 'T03-04': [], 'T03-05': [], 'T03-06': []}",
+      "real_project_execution": "NOT_TESTED"
+    }
+  ]
+}
