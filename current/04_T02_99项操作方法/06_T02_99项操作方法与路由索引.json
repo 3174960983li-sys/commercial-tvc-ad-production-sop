@@ -1,0 +1,2389 @@
+{
+  "schema": "T02.operation_method_index.v1",
+  "status": "FINALIZED_AFTER_T02_07_STATIC_REVIEW",
+  "project": "AI商业广告全流程制作SOP V1.0",
+  "scope": {
+    "stages": 12,
+    "steps": 99,
+    "stage_counts": {
+      "P0": 6,
+      "P1": 7,
+      "P2": 7,
+      "P3": 7,
+      "P4": 7,
+      "P5": 9,
+      "P6": 11,
+      "P7": 9,
+      "P8": 9,
+      "P9": 10,
+      "P10": 10,
+      "P11": 7
+    }
+  },
+  "baseline": {
+    "architecture": "第一阶段架构定稿",
+    "standards": "第二阶段S07 V1.0 + E-01 errata",
+    "routing": "第三阶段T01 99步骤路由"
+  },
+  "gate_map": {
+    "P0": "G0",
+    "P1": "G1",
+    "P2": "G2",
+    "P3": "G3",
+    "P4": "G4（联合）",
+    "P5": "G4（联合）",
+    "P6": "G5",
+    "P7": "G6",
+    "P8": "G7a/G7b（G7复合关卡）",
+    "P9": "无独立Gate；输出Master Candidate交P10",
+    "P10": "G8（逐交付变体、逐文件hash）",
+    "P11": "G9（仅P11_ACTIVATED时）"
+  },
+  "review_notes": {
+    "step_level_review_explicit_missing": [
+      "P0-02",
+      "P0-03",
+      "P1-02",
+      "P1-04",
+      "P1-05",
+      "P1-06",
+      "P2-01",
+      "P2-03",
+      "P2-06",
+      "P3-01",
+      "P3-04",
+      "P4-01",
+      "P4-02",
+      "P4-04",
+      "P5-02",
+      "P5-03",
+      "P5-04",
+      "P5-05",
+      "P5-06",
+      "P5-07",
+      "P5-08"
+    ],
+    "rule": "未单列审核字段的中间步骤，不等于无需审核；T03模板必须配置review_mode、reviewer_role及是否继承阶段Gate。",
+    "version_rule_inherited_for_steps": [
+      "P0-01",
+      "P0-02",
+      "P0-03",
+      "P0-04",
+      "P0-05",
+      "P0-06",
+      "P1-01",
+      "P1-02",
+      "P1-03",
+      "P1-04",
+      "P1-05",
+      "P1-06",
+      "P1-07",
+      "P2-01",
+      "P2-02",
+      "P2-03",
+      "P2-04",
+      "P2-05",
+      "P2-06",
+      "P2-07",
+      "P3-01",
+      "P3-02",
+      "P3-03",
+      "P3-04",
+      "P3-05",
+      "P3-06",
+      "P3-07"
+    ]
+  },
+  "steps": [
+    {
+      "step_id": "P0-01",
+      "name": "客户需求接收",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "PROJECT_CREATED",
+      "routing_note": "客户需求录入"
+    },
+    {
+      "step_id": "P0-02",
+      "name": "广告项目类型识别",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P0-01"
+      ],
+      "suggested_dependencies": "P0-01",
+      "routing_note": "多轴项目类型，可再补充"
+    },
+    {
+      "step_id": "P0-03",
+      "name": "广告 Brief 信息整理",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P0-01"
+      ],
+      "suggested_dependencies": "P0-01",
+      "routing_note": "Brief整理与缺项清单"
+    },
+    {
+      "step_id": "P0-04",
+      "name": "制作目标与交付范围确认",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P0-02",
+        "P0-03"
+      ],
+      "suggested_dependencies": "P0-02,P0-03",
+      "routing_note": "批准的目标与范围"
+    },
+    {
+      "step_id": "P0-05",
+      "name": "预算、周期与资源初步评估",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P0-03",
+        "P0-04"
+      ],
+      "suggested_dependencies": "P0-03,P0-04",
+      "routing_note": "预算周期初估并留风险"
+    },
+    {
+      "step_id": "P0-06",
+      "name": "项目立项与项目档案建立",
+      "stage_id": "P0",
+      "stage_name": "项目接收与需求立项",
+      "stage_exit_gate": "G0",
+      "source_manual": "02_P0项目接收与需求立项_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P0-04",
+        "P0-05"
+      ],
+      "suggested_dependencies": "P0-04,P0-05",
+      "routing_note": "项目档案入库，触发G0"
+    },
+    {
+      "step_id": "P1-01",
+      "name": "品牌背景研究",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G0",
+      "routing_note": "研究任务并行入口"
+    },
+    {
+      "step_id": "P1-02",
+      "name": "品牌定位与视觉识别分析",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G0",
+      "routing_note": "与P1-01并行，需品牌素材来源"
+    },
+    {
+      "step_id": "P1-03",
+      "name": "产品信息与功能研究",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G0",
+      "routing_note": "产品SKU及证据目录"
+    },
+    {
+      "step_id": "P1-04",
+      "name": "产品核心优势提取",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P1-03"
+      ],
+      "suggested_dependencies": "P1-03",
+      "routing_note": "卖点依赖产品事实"
+    },
+    {
+      "step_id": "P1-05",
+      "name": "竞品广告与市场案例研究",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G0",
+      "routing_note": "竞品研究并行"
+    },
+    {
+      "step_id": "P1-06",
+      "name": "目标消费者研究",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G0",
+      "routing_note": "受众研究并行"
+    },
+    {
+      "step_id": "P1-07",
+      "name": "品牌与产品研究结论整理",
+      "stage_id": "P1",
+      "stage_name": "品牌与产品研究",
+      "stage_exit_gate": "G1",
+      "source_manual": "03_P1品牌与产品研究_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P1-01",
+        "P1-02",
+        "P1-03",
+        "P1-04",
+        "P1-05",
+        "P1-06"
+      ],
+      "suggested_dependencies": "P1-01,P1-02,P1-03,P1-04,P1-05,P1-06",
+      "routing_note": "汇总后提交G1"
+    },
+    {
+      "step_id": "P2-01",
+      "name": "广告商业目标分析",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G1",
+      "routing_note": "商业目标与指标"
+    },
+    {
+      "step_id": "P2-02",
+      "name": "目标消费者定位",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G1",
+      "routing_note": "目标受众确定"
+    },
+    {
+      "step_id": "P2-03",
+      "name": "消费者需求与痛点分析",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P2-02"
+      ],
+      "suggested_dependencies": "P2-02",
+      "routing_note": "用户痛点与场景"
+    },
+    {
+      "step_id": "P2-04",
+      "name": "产品卖点与消费者利益转化",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P2-03"
+      ],
+      "suggested_dependencies": "G1,P2-03",
+      "routing_note": "只引用已核证卖点"
+    },
+    {
+      "step_id": "P2-05",
+      "name": "核心传播信息确定",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P2-01",
+        "P2-04"
+      ],
+      "suggested_dependencies": "P2-01,P2-04",
+      "routing_note": "主传播信息"
+    },
+    {
+      "step_id": "P2-06",
+      "name": "广告传播策略设计",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P2-01",
+        "P2-02",
+        "P2-05"
+      ],
+      "suggested_dependencies": "P2-01,P2-02,P2-05",
+      "routing_note": "渠道策略、CTA等"
+    },
+    {
+      "step_id": "P2-07",
+      "name": "广告定位与策略方案形成",
+      "stage_id": "P2",
+      "stage_name": "商业策略与广告定位",
+      "stage_exit_gate": "G2",
+      "source_manual": "02_P2商业策略与广告定位_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P2-01",
+        "P2-02",
+        "P2-03",
+        "P2-04",
+        "P2-05",
+        "P2-06"
+      ],
+      "suggested_dependencies": "P2-01,P2-02,P2-03,P2-04,P2-05,P2-06",
+      "routing_note": "策略稿提交G2"
+    },
+    {
+      "step_id": "P3-01",
+      "name": "创意方向探索",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G2",
+      "routing_note": "多创意方案并行探索"
+    },
+    {
+      "step_id": "P3-02",
+      "name": "核心创意概念设计",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-01"
+      ],
+      "suggested_dependencies": "P3-01",
+      "routing_note": "确定候选核心概念"
+    },
+    {
+      "step_id": "P3-03",
+      "name": "广告主题设计",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-02"
+      ],
+      "suggested_dependencies": "P3-02",
+      "routing_note": "主题与口号方向"
+    },
+    {
+      "step_id": "P3-04",
+      "name": "核心视觉概念设计",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-02"
+      ],
+      "suggested_dependencies": "P3-02",
+      "routing_note": "视觉概念可并行P3-03"
+    },
+    {
+      "step_id": "P3-05",
+      "name": "创意叙事与表现形式设计",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-02"
+      ],
+      "suggested_dependencies": "P3-02",
+      "routing_note": "叙事/表现机制可并行P3-03"
+    },
+    {
+      "step_id": "P3-06",
+      "name": "品牌融入方式设计",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-02",
+        "P3-04"
+      ],
+      "suggested_dependencies": "P3-02,P3-04",
+      "routing_note": "品牌植入策略"
+    },
+    {
+      "step_id": "P3-07",
+      "name": "创意方案整合与确认",
+      "stage_id": "P3",
+      "stage_name": "广告创意策划",
+      "stage_exit_gate": "G3",
+      "source_manual": "03_P3广告创意策划_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": false,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "INHERIT_S07_AND_T02_COMMON_METADATA",
+      "direct_step_edges": [
+        "P3-03",
+        "P3-04",
+        "P3-05",
+        "P3-06"
+      ],
+      "suggested_dependencies": "P3-03,P3-04,P3-05,P3-06",
+      "routing_note": "批准概念提交G3"
+    },
+    {
+      "step_id": "P4-01",
+      "name": "广告内容结构设计",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G3",
+      "routing_note": "内容节拍与传播任务"
+    },
+    {
+      "step_id": "P4-02",
+      "name": "广告叙事方式设计",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-01"
+      ],
+      "suggested_dependencies": "P4-01",
+      "routing_note": "叙事机制"
+    },
+    {
+      "step_id": "P4-03",
+      "name": "广告文案撰写",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-01"
+      ],
+      "suggested_dependencies": "P4-01",
+      "routing_note": "文案可与叙事细化并行"
+    },
+    {
+      "step_id": "P4-04",
+      "name": "旁白与对白设计",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-01"
+      ],
+      "suggested_dependencies": "P4-01",
+      "routing_note": "旁白/对白并行准备"
+    },
+    {
+      "step_id": "P4-05",
+      "name": "广告脚本编写",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-02",
+        "P4-03",
+        "P4-04"
+      ],
+      "suggested_dependencies": "P4-02,P4-03,P4-04",
+      "routing_note": "编制时间轴脚本"
+    },
+    {
+      "step_id": "P4-06",
+      "name": "产品卖点与品牌信息植入",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-03",
+        "P4-05"
+      ],
+      "suggested_dependencies": "P4-03,P4-05",
+      "routing_note": "事实性宣称映射校验"
+    },
+    {
+      "step_id": "P4-07",
+      "name": "广告脚本审核与确认",
+      "stage_id": "P4",
+      "stage_name": "广告文案与脚本",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "02_P4广告文案与脚本_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P4-05",
+        "P4-06"
+      ],
+      "suggested_dependencies": "P4-05,P4-06",
+      "routing_note": "内部脚本审核；最终G4联审P5-09"
+    },
+    {
+      "step_id": "P5-01",
+      "name": "广告导演思维分析",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G3",
+      "routing_note": "可以基于P4草稿开始导演分析"
+    },
+    {
+      "step_id": "P5-02",
+      "name": "广告视觉风格定位",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-01"
+      ],
+      "suggested_dependencies": "P5-01",
+      "routing_note": "风格可随P4同步迭代"
+    },
+    {
+      "step_id": "P5-03",
+      "name": "整体美术指导设计",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-02"
+      ],
+      "suggested_dependencies": "P5-02",
+      "routing_note": "美术规则"
+    },
+    {
+      "step_id": "P5-04",
+      "name": "摄影风格与镜头语言设计",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-01",
+        "P5-02"
+      ],
+      "suggested_dependencies": "P5-01,P5-02",
+      "routing_note": "摄影原则"
+    },
+    {
+      "step_id": "P5-05",
+      "name": "灯光与色彩设计",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-02",
+        "P5-03"
+      ],
+      "suggested_dependencies": "P5-02,P5-03",
+      "routing_note": "光色设计"
+    },
+    {
+      "step_id": "P5-06",
+      "name": "场景与空间设计方向",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-03"
+      ],
+      "suggested_dependencies": "P5-03",
+      "routing_note": "空间/场景规则"
+    },
+    {
+      "step_id": "P5-07",
+      "name": "人物与产品视觉表现设计",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-03"
+      ],
+      "suggested_dependencies": "P5-03",
+      "routing_note": "产品/人物规范，依赖获证产品资料"
+    },
+    {
+      "step_id": "P5-08",
+      "name": "声音与音乐风格设计",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": false
+      },
+      "review_policy": "CONFIGURE_IN_T03_TEMPLATE_BY_RISK_AND_STAGE_GATE",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-01"
+      ],
+      "suggested_dependencies": "P5-01",
+      "routing_note": "声音可并行"
+    },
+    {
+      "step_id": "P5-09",
+      "name": "导演创作方案整合",
+      "stage_id": "P5",
+      "stage_name": "导演分析与视觉开发",
+      "stage_exit_gate": "G4（联合）",
+      "source_manual": "03_P5导演分析与视觉开发_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P5-04",
+        "P5-05",
+        "P5-06",
+        "P5-07",
+        "P5-08",
+        "P4-07"
+      ],
+      "suggested_dependencies": "P5-04,P5-05,P5-06,P5-07,P5-08,P4-07",
+      "routing_note": "脚本与导演方案联合提交G4"
+    },
+    {
+      "step_id": "P6-01",
+      "name": "广告镜头结构划分",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G4",
+      "routing_note": "镜头结构定义"
+    },
+    {
+      "step_id": "P6-02",
+      "name": "镜头功能与信息分配",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-01"
+      ],
+      "suggested_dependencies": "P6-01",
+      "routing_note": "内容节拍映射"
+    },
+    {
+      "step_id": "P6-03",
+      "name": "景别与机位设计",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-02"
+      ],
+      "suggested_dependencies": "P6-02",
+      "routing_note": "机位、景别"
+    },
+    {
+      "step_id": "P6-04",
+      "name": "摄影机运动设计",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-03"
+      ],
+      "suggested_dependencies": "P6-03",
+      "routing_note": "运镜需依托机位与空间"
+    },
+    {
+      "step_id": "P6-05",
+      "name": "主体动作与调度设计",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-03"
+      ],
+      "suggested_dependencies": "P6-03",
+      "routing_note": "调度与运镜迭代"
+    },
+    {
+      "step_id": "P6-06",
+      "name": "产品展示镜头设计",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-02"
+      ],
+      "suggested_dependencies": "P6-02",
+      "routing_note": "产品镜头并行细化"
+    },
+    {
+      "step_id": "P6-07",
+      "name": "镜头衔接与转场设计",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-04",
+        "P6-05",
+        "P6-06"
+      ],
+      "suggested_dependencies": "P6-04,P6-05,P6-06",
+      "routing_note": "衔接连续性"
+    },
+    {
+      "step_id": "P6-08",
+      "name": "广告分镜表编制",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-02",
+        "P6-03",
+        "P6-04",
+        "P6-05",
+        "P6-06",
+        "P6-07"
+      ],
+      "suggested_dependencies": "P6-02,P6-03,P6-04,P6-05,P6-06,P6-07",
+      "routing_note": "完整分镜表"
+    },
+    {
+      "step_id": "P6-09",
+      "name": "分镜图制作",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-08"
+      ],
+      "suggested_dependencies": "P6-08",
+      "routing_note": "概念图/代理分镜，可先做部分预览"
+    },
+    {
+      "step_id": "P6-10",
+      "name": "动态预演与节奏验证",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-09"
+      ],
+      "suggested_dependencies": "P6-09",
+      "routing_note": "Animatic全片时间轴和节奏检查"
+    },
+    {
+      "step_id": "P6-11",
+      "name": "分镜方案审核与锁定",
+      "stage_id": "P6",
+      "stage_name": "分镜设计与动态预演",
+      "stage_exit_gate": "G5",
+      "source_manual": "02_P6分镜与动态预演_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P6-08",
+        "P6-10"
+      ],
+      "suggested_dependencies": "P6-08,P6-10",
+      "routing_note": "提交G5"
+    },
+    {
+      "step_id": "P7-01",
+      "name": "产品视觉资产设计",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G5",
+      "routing_note": "正式产品资产"
+    },
+    {
+      "step_id": "P7-02",
+      "name": "产品包装与品牌元素资产",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G5",
+      "routing_note": "包装/品牌原件，可并行"
+    },
+    {
+      "step_id": "P7-03",
+      "name": "人物与模特资产设计",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G5",
+      "routing_note": "角色/模特，如无人物说明N/A"
+    },
+    {
+      "step_id": "P7-04",
+      "name": "场景与环境资产设计",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G5",
+      "routing_note": "场景/环境，独立并行"
+    },
+    {
+      "step_id": "P7-05",
+      "name": "道具与辅助视觉资产设计",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G5",
+      "routing_note": "道具/辅助资产，条件适用"
+    },
+    {
+      "step_id": "P7-06",
+      "name": "资产一致性检查",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P7-01",
+        "P7-02",
+        "P7-03",
+        "P7-04",
+        "P7-05"
+      ],
+      "suggested_dependencies": "P7-01,P7-02,P7-03*,P7-04*,P7-05*",
+      "routing_note": "*代表按适用性收齐对应正式资产"
+    },
+    {
+      "step_id": "P7-07",
+      "name": "镜头资产匹配",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P7-06"
+      ],
+      "suggested_dependencies": "P7-06",
+      "routing_note": "镜头资产关联完整"
+    },
+    {
+      "step_id": "P7-08",
+      "name": "AI生产方案与工具链准备",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P7-07"
+      ],
+      "suggested_dependencies": "G5,P7-07",
+      "routing_note": "工具链可提前调研，正式冻结需P7-07"
+    },
+    {
+      "step_id": "P7-09",
+      "name": "资产与生产准备审核",
+      "stage_id": "P7",
+      "stage_name": "视觉资产与生产准备",
+      "stage_exit_gate": "G6",
+      "source_manual": "03_P7视觉资产与生产准备_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P7-07",
+        "P7-08"
+      ],
+      "suggested_dependencies": "P7-07,P7-08",
+      "routing_note": "提交G6"
+    },
+    {
+      "step_id": "P8-01",
+      "name": "镜头生产任务拆分",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G6",
+      "routing_note": "按shot/source_mode拆任务"
+    },
+    {
+      "step_id": "P8-02",
+      "name": "AI图片素材生成",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-01"
+      ],
+      "suggested_dependencies": "P8-01",
+      "routing_note": "只在需要AI关键帧/图片时执行；LIVE/CG可N/A"
+    },
+    {
+      "step_id": "P8-03",
+      "name": "AI视频提示词设计",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-01",
+        "P8-02"
+      ],
+      "suggested_dependencies": "P8-01,P8-02*",
+      "routing_note": "AI模型需提示词；其他来源记录生产指令等效文件"
+    },
+    {
+      "step_id": "P8-04",
+      "name": "草稿视频生成",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-03"
+      ],
+      "suggested_dependencies": "P8-03*",
+      "routing_note": "草稿或LIVE/CG等效动态验证"
+    },
+    {
+      "step_id": "P8-05",
+      "name": "镜头质量检查",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-04"
+      ],
+      "suggested_dependencies": "P8-04",
+      "routing_note": "草稿QA，也对等效验证证据审查"
+    },
+    {
+      "step_id": "P8-06",
+      "name": "镜头问题诊断与返工",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-05"
+      ],
+      "suggested_dependencies": "P8-05[QA_FAIL]",
+      "routing_note": "条件性返工，可多次回到P8-02/03/04或上游"
+    },
+    {
+      "step_id": "P8-07",
+      "name": "最终镜头方案确认",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-05",
+        "P8-06"
+      ],
+      "suggested_dependencies": "P8-05[QA_PASS],P8-06*[closed]",
+      "routing_note": "镜头级G7a批准"
+    },
+    {
+      "step_id": "P8-08",
+      "name": "高清视频生成",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-07"
+      ],
+      "suggested_dependencies": "P8-07[G7a PASS]",
+      "routing_note": "高清或等效正式镜头制作"
+    },
+    {
+      "step_id": "P8-09",
+      "name": "视频素材筛选与归档",
+      "stage_id": "P8",
+      "stage_name": "AI视频生产与镜头生成",
+      "stage_exit_gate": "G7a/G7b（G7复合关卡）",
+      "source_manual": "02_P8视频生产与镜头生成_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P8-08"
+      ],
+      "suggested_dependencies": "P8-08",
+      "routing_note": "逐Take媒体QA及G7b"
+    },
+    {
+      "step_id": "P9-01",
+      "name": "视频素材整理",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G7b[accepted take]",
+      "routing_note": "正式素材整理；代理粗剪可提前准备"
+    },
+    {
+      "step_id": "P9-02",
+      "name": "初剪与镜头结构整合",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-01"
+      ],
+      "suggested_dependencies": "P9-01*",
+      "routing_note": "可用代理预先粗剪，锁定版须正式素材"
+    },
+    {
+      "step_id": "P9-03",
+      "name": "精剪与节奏调整",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-02"
+      ],
+      "suggested_dependencies": "P9-02,G7b[required take set]",
+      "routing_note": "正式精剪依赖必需素材集合"
+    },
+    {
+      "step_id": "P9-04",
+      "name": "画面修复与合成",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-03"
+      ],
+      "suggested_dependencies": "P9-03",
+      "routing_note": "合成/修复可对已确认片段并行"
+    },
+    {
+      "step_id": "P9-05",
+      "name": "色彩统一与调色",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-03"
+      ],
+      "suggested_dependencies": "P9-03",
+      "routing_note": "调色与合成可互相校正"
+    },
+    {
+      "step_id": "P9-06",
+      "name": "音乐设计与制作",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G4",
+      "routing_note": "音乐设计可早期并行；正式授权需P10审查"
+    },
+    {
+      "step_id": "P9-07",
+      "name": "旁白与配音处理",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "G4",
+      "routing_note": "旁白/配音按需执行；无旁白留N/A证据"
+    },
+    {
+      "step_id": "P9-08",
+      "name": "音效设计与混音",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-03",
+        "P9-06",
+        "P9-07"
+      ],
+      "suggested_dependencies": "P9-03,P9-06*,P9-07*",
+      "routing_note": "声画同步与混音，*表示适用时"
+    },
+    {
+      "step_id": "P9-09",
+      "name": "字幕与品牌包装",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-03"
+      ],
+      "suggested_dependencies": "P9-03",
+      "routing_note": "字幕和品牌包装，可与混音并行"
+    },
+    {
+      "step_id": "P9-10",
+      "name": "最终成片输出",
+      "stage_id": "P9",
+      "stage_name": "后期制作与视听包装",
+      "stage_exit_gate": "无独立Gate；输出Master Candidate交P10",
+      "source_manual": "03_P9后期制作与视听包装_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-04",
+        "P9-05",
+        "P9-08",
+        "P9-09"
+      ],
+      "suggested_dependencies": "P9-04*,P9-05,P9-08*,P9-09",
+      "routing_note": "输出审片母版候选到P10"
+    },
+    {
+      "step_id": "P10-01",
+      "name": "商业目标符合性审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "商业目标一致性审查，早期可预查"
+    },
+    {
+      "step_id": "P10-02",
+      "name": "创意与品牌表达审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "品牌和创意审查"
+    },
+    {
+      "step_id": "P10-03",
+      "name": "产品与品牌准确性审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "产品事实及品牌准确性"
+    },
+    {
+      "step_id": "P10-04",
+      "name": "视听质量审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "视听/技术质量"
+    },
+    {
+      "step_id": "P10-05",
+      "name": "AI生成缺陷审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "AI缺陷审查，对无AI段注明N/A范围"
+    },
+    {
+      "step_id": "P10-06",
+      "name": "广告内容与法律合规审核",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P9-10"
+      ],
+      "suggested_dependencies": "P9-10",
+      "routing_note": "法律与权利最终复核；前期全程预查"
+    },
+    {
+      "step_id": "P10-07",
+      "name": "客户审片与意见整理",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P10-01",
+        "P10-02",
+        "P10-03",
+        "P10-04",
+        "P10-05",
+        "P10-06"
+      ],
+      "suggested_dependencies": "P10-01,P10-02,P10-03,P10-04,P10-05*,P10-06",
+      "routing_note": "内部合格候选送客户审片"
+    },
+    {
+      "step_id": "P10-08",
+      "name": "最终修改与确认",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P10-07"
+      ],
+      "suggested_dependencies": "P10-07[feedback changes]",
+      "routing_note": "修改后重审受影响审查项，未改时可N/A"
+    },
+    {
+      "step_id": "P10-09",
+      "name": "平台规格适配与版本输出",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P10-07",
+        "P10-08"
+      ],
+      "suggested_dependencies": "P10-07,P10-08*",
+      "routing_note": "针对具体渠道/语言/画幅导出每版文件"
+    },
+    {
+      "step_id": "P10-10",
+      "name": "商业项目交付与验收",
+      "stage_id": "P10",
+      "stage_name": "质量审核与商业交付",
+      "stage_exit_gate": "G8（逐交付变体、逐文件hash）",
+      "source_manual": "02_P10质量审核与商业交付_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P10-09"
+      ],
+      "suggested_dependencies": "P10-09,G8[variant exact hash PASS]",
+      "routing_note": "执行传输/签收与合同验收；G8非自动签收"
+    },
+    {
+      "step_id": "P11-01",
+      "name": "投放结果数据收集",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "DELIVERED,P11_ACTIVATED",
+      "routing_note": "收集真实数据；无数据留状态及来源说明"
+    },
+    {
+      "step_id": "P11-02",
+      "name": "广告传播效果分析",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P11-01"
+      ],
+      "suggested_dependencies": "P11-01[MEASURED/PARTIAL]",
+      "routing_note": "数据足以计算对应指标时执行，否则N/A"
+    },
+    {
+      "step_id": "P11-03",
+      "name": "用户反馈与表现分析",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P11-01"
+      ],
+      "suggested_dependencies": "P11-01",
+      "routing_note": "可处理定性反馈；无反馈则N/A"
+    },
+    {
+      "step_id": "P11-04",
+      "name": "广告创意效果复盘",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P11-02",
+        "P11-03"
+      ],
+      "suggested_dependencies": "P11-02*,P11-03*",
+      "routing_note": "仅可得出证据支持的创意结论"
+    },
+    {
+      "step_id": "P11-05",
+      "name": "制作成本与效率复盘",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [],
+      "suggested_dependencies": "DELIVERED,P11_ACTIVATED",
+      "routing_note": "制作成本与效率可独立复盘"
+    },
+    {
+      "step_id": "P11-06",
+      "name": "项目问题与经验总结",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P11-04",
+        "P11-05"
+      ],
+      "suggested_dependencies": "P11-04*,P11-05",
+      "routing_note": "汇总经验和问题"
+    },
+    {
+      "step_id": "P11-07",
+      "name": "SOP与Skill优化建议",
+      "stage_id": "P11",
+      "stage_name": "投放反馈与项目复盘",
+      "stage_exit_gate": "G9（仅P11_ACTIVATED时）",
+      "source_manual": "03_P11投放反馈与项目复盘_详细操作.md",
+      "operation_card_fields": {
+        "responsible_role_present": true,
+        "deliverable_schema_present": true,
+        "acceptance_criteria_present": true,
+        "rollback_or_exception_present": true,
+        "version_rule_explicit": true,
+        "step_level_review_explicit": true
+      },
+      "review_policy": "EXPLICIT_IN_STEP_CARD",
+      "version_policy": "EXPLICIT_IN_STEP_CARD",
+      "direct_step_edges": [
+        "P11-06"
+      ],
+      "suggested_dependencies": "P11-06",
+      "routing_note": "优化建议需批准后才能改Skill；提交G9"
+    }
+  ]
+}
